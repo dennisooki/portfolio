@@ -1,0 +1,132 @@
+.firma {
+    background: var(--bg-primary);
+    padding-bottom: var(--space-xl);
+}
+
+.inner {
+    max-width: 720px;
+    text-align: center;
+}
+
+.label {
+    opacity: 0.5;
+}
+
+.subtitle {
+    font-family: var(--font-accent);
+    font-size: 1.3rem;
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-lg);
+}
+
+/* Code editor */
+.editor {
+    background: #1a1a1e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    text-align: left;
+    margin-bottom: var(--space-xl);
+}
+
+[data-theme="dark"] .editor {
+    background: #0c0c0e;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.editorHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.editorDots {
+    display: flex;
+    gap: 6px;
+}
+
+.editorDots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.editorDots span:nth-child(1) {
+    background: #ff5f57;
+}
+
+.editorDots span:nth-child(2) {
+    background: #ffbd2e;
+}
+
+.editorDots span:nth-child(3) {
+    background: #28ca42;
+}
+
+.editorTitle {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.editorBody {
+    padding: 1.5rem;
+    min-height: 320px;
+    overflow-x: auto;
+}
+
+.editorBody code {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: #a0a0b0;
+    white-space: pre;
+    tab-size: 2;
+}
+
+.cursor {
+    color: var(--accent-primary);
+    animation: blink 1s step-end infinite;
+    font-weight: 300;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Footer */
+.footer {
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--border-light);
+}
+
+.footerText {
+    font-size: var(--text-small);
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.footerText strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.footerMeta {
+    font-size: var(--text-caption);
+    color: var(--text-tertiary);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.footerYear {
+    font-family: var(--font-mono);
+    font-size: var(--text-caption);
+    color: var(--text-tertiary);
+    opacity: 0.6;
+}
