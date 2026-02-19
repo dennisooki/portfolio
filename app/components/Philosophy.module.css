@@ -1,0 +1,76 @@
+.philosophy {
+    background: var(--bg-primary);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-3xl);
+    align-items: center;
+}
+
+.textCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.prose {
+    font-size: var(--text-body);
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: var(--space-sm);
+    max-width: 560px;
+}
+
+.prose:last-child {
+    font-family: var(--font-accent);
+    font-size: 1.3rem;
+    color: var(--accent-primary);
+    margin-top: var(--space-xs);
+}
+
+/* Art column */
+.artCol {
+    display: flex;
+    justify-content: center;
+}
+
+.artFrame {
+    width: 100%;
+    max-width: 320px;
+    padding: var(--space-lg);
+    border: 1px solid var(--border-light);
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+.artFrame::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border: 1px solid var(--border-light);
+    opacity: 0.5;
+}
+
+.artSvg {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .artCol {
+        order: -1;
+    }
+
+    .artFrame {
+        max-width: 240px;
+    }
+}
