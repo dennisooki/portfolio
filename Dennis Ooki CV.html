@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dennis Ooki Magolo - CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset & Body Styles */
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            line-height: 1.4;
+            margin: 0;
+            padding: 15px;
+            color: #333;
+            background-color: #fff;
+            font-size: 12px;
+        }
+
+        /* Container for CV content */
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2c5aa0;
+            position: relative; /* allow top-right photo positioning */
+        }
+
+        /* Passport photo (top-right) */
+        .cv-photo {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 92px;
+            height: 92px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            display: none; /* only show if the image successfully loads */
+            background: #fff;
+        }
+
+        header h1 {
+            font-size: 22px;
+            margin: 0;
+            color: #2c5aa0;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            margin: 3px 0;
+            font-size: 11px;
+            color: #555;
+        }
+
+        header a {
+            color: #2c5aa0;
+            text-decoration: none;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 12px;
+        }
+
+        section h2 {
+            font-size: 14px;
+            color: #2c5aa0;
+            margin-bottom: 6px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid #e0e0e0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* List Styles */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin-bottom: 3px;
+            padding-left: 12px;
+            position: relative;
+            font-size: 11px;
+        }
+
+        ul li:before {
+            content: '▪';
+            color: #2c5aa0;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Summary */
+        .summary p {
+            text-align: justify;
+            font-size: 12px;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Experience & Education Items */
+        .experience-item, .education-item {
+            margin-bottom: 10px;
+        }
+
+        .experience-item h3, .education-item h3 {
+            font-size: 12px;
+            margin: 0;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .experience-item p, .education-item p {
+            margin: 1px 0 4px 0;
+            font-size: 11px;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .skills-grid div h3 {
+            font-size: 11px;
+            margin: 0 0 3px 0;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .skills-grid ul li {
+            font-size: 11px;
+            margin-bottom: 1px;
+        }
+
+        /* Projects */
+        .projects-item {
+            margin-bottom: 8px;
+        }
+
+        .projects-item h3 {
+            font-size: 12px;
+            margin: 0 0 3px 0;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Core Competencies */
+        .core-competencies ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+        }
+
+        .core-competencies ul li {
+            font-size: 11px;
+        }
+
+        /* Certifications */
+        .certifications ul li:before {
+            content: '✓';
+            color: #28a745;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 10px;
+            }
+            .cv-container {
+                padding: 10px;
+                margin: 0;
+            }
+            .cv-photo {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="cv-container">
+        <header>
+            <!-- Hidden until JS confirms image.png is available -->
+            <img class="cv-photo" id="cvPhoto" src="image.png" alt="Passport photo of Dennis Ooki Magolo" />
+
+            <h1>DENNIS OOKI MAGOLO</h1>
+            <p>Software Developer & IT Specialist</p>
+            <p>(+254) 700 772 176 | <a href="mailto:dennisooki@icloud.com">dennisooki@icloud.com</a> | <a href="https://github.com/dennisooki" target="_blank">github.com/dennisooki</a></p>
+        </header>
+
+        <section class="summary">
+            <h2>Professional Summary</h2>
+            <p> Software Developer and IT Specialist with comprehensive knowledge in full-stack development, mobile applications, and modern web technologies. Demonstrated expertise in Python, Django, Flutter, and React with strong foundation in database management and API integration. Passionate about creating efficient, user-friendly solutions and continuously enhancing technical skills through hands-on projects and continuous learning.</p>
+        </section>
+
+        <section class="experience">
+            <h2>Experience & Leadership</h2>
+            <div class="experience-item">
+                <h3>Software Development Lead</h3>
+                <p>Uniconnect Centre (Accor International) | May 2025 – Present</p>
+                <ul>
+                    <li>Developed the entire internal tools ecosystem from the ground up, including architecture design and implementation</li>
+                    <li>Configured and managed backend systems to support company-wide operations and processes</li>
+                    <li>Implemented comprehensive database management solutions for efficient data storage and retrieval</li>
+                    <li>Integrated Gemini AI and other LLMs into internal tools to enhance automation and decision-making capabilities</li>
+                    <li>Designed and deployed scalable APIs and microservices to support business applications</li>
+                    <li>Created comprehensive technical documentation for internal tools, APIs, and development processes</li>
+                    <li>Established development workflows and best practices for the technical team</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Bachelor of Science in Software Development</h3>
+                <p>KCA University | 2021 – 2025</p>
+                <ul>
+                    <li>Relevant Coursework: Data Structures & Algorithms, Database Management Systems, Software Engineering, Computer Architecture, Information Systems Management</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="technical-skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div>
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Dart</li>
+                        <li>JavaScript</li>
+                        <li>Bash</li>
+                        <li>Go</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Frameworks & Libraries</h3>
+                    <ul>
+                        <li>Django</li>
+                        <li>Flutter</li>
+                        <li>React</li>
+                        <li>Android Development</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Databases & APIs</h3>
+                    <ul>
+                        <li>MongoDB</li>
+                        <li>Supabase</li>
+                        <li>JSON</li>
+                        <li>RESTful APIs</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Development Tools</h3>
+                    <ul>
+                        <li>Git, GitHub, GitLab</li>
+                        <li>VS Code</li>
+                        <li>Docker</li>
+                        <li>Unix/Linux Systems</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Web Technologies</h3>
+                    <ul>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>Responsive Design</li>
+                        <li>UX/UI Principles</li>
+                        <li>Web APIs Integration</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Other Technologies</h3>
+                    <ul>
+                        <li>Microsoft 365</li>
+                        <li>Agile Methodologies</li>
+                        <li>Software Testing</li>
+                        <li>Technical Documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2>Key Projects</h2>
+            <div class="projects-item">
+                <h3>Personal Finance Tracker</h3>
+                <ul>
+                    <li>Developed full-stack financial management application using React frontend and Django backend</li>
+                    <li>Implemented MongoDB database for efficient data storage and complex financial data relationships</li>
+                    <li>Created intuitive dashboard with expense tracking, budgeting tools, and financial analytics</li>
+                    <li>Integrated secure user authentication and data encryption for financial data protection</li>
+                </ul>
+            </div>
+            <div class="projects-item">
+                <h3>Kula Kount - Privacy-Focused Calorie Tracker</h3>
+                <ul>
+                    <li>Built cross-platform mobile application using Flutter and Dart for iOS and Android</li>
+                    <li>Integrated barcode scanning functionality and connected with OpenFoodFacts and USDA APIs</li>
+                    <li>Implemented offline functionality and data synchronization with Supabase backend</li>
+                    <li>Designed privacy-first architecture ensuring user data protection and GDPR compliance</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Meta Back-End Developer Professional Certificate</li>
+                <li>IBM Artificial Intelligence Fundamentals</li>
+            </ul>
+        </section>
+
+        <section class="core-competencies">
+            <h2>Core Competencies</h2>
+            <ul>
+                <li>Full-Stack Web Development</li>
+                <li>Mobile Application Development</li>
+                <li>Database Design & Management</li>
+                <li>Software Architecture & Design</li>
+                <li>Problem-Solving & Debugging</li>
+                <li>Version Control & Collaboration</li>
+                <li>Agile Development & Testing</li>
+                <li>Technical Leadership & Mentoring</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        (function () {
+            const img = document.getElementById('cvPhoto');
+            if (!img) return;
+
+            // Ensure it stays hidden unless the file loads successfully
+            img.style.display = 'none';
+
+            img.addEventListener('load', () => {
+                img.style.display = 'block';
+            });
+
+            img.addEventListener('error', () => {
+                // Keep hidden (CV remains as-is)
+                img.style.display = 'none';
+            });
+
+            // Force a fresh load attempt (helps some browsers re-evaluate if file appears later)
+            const src = img.getAttribute('src');
+            img.src = src + (src.includes('?') ? '&' : '?') + 'v=' + Date.now();
+        })();
+    </script>
+</body>
+</html>
