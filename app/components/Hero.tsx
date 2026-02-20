@@ -23,7 +23,7 @@ export default function Hero() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const nameLetters = "DENNIS OOKI MAGOLO".split("");
+  const nameWords = ["DENNIS", "OOKI", "MAGOLO"];
 
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
@@ -96,20 +96,25 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            {nameLetters.map((letter, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.5 + index * 0.03,
-                  ease: "easeOut",
-                }}
-                className={letter === " " ? "inline-block w-4" : "inline-block"}
-              >
-                {letter}
-              </motion.span>
+            {nameWords.map((word, wordIndex) => (
+              <span key={wordIndex} className="inline-block whitespace-nowrap">
+                {word.split("").map((letter, letterIndex) => (
+                  <motion.span
+                    key={letterIndex}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.5 + (wordIndex * word.length + letterIndex) * 0.03,
+                      ease: "easeOut",
+                    }}
+                    className="inline-block"
+                  >
+                    {letter}
+                  </motion.span>
+                ))}
+                {wordIndex < nameWords.length - 1 && <span className="inline-block w-4" />}
+              </span>
             ))}
           </motion.h1>
         </motion.div>
@@ -125,14 +130,16 @@ export default function Hero() {
             Architect of Digital Experiences
           </p>
           
-          <div className="flex items-center justify-center gap-2 text-muted">
-            <MapPin className="w-4 h-4" />
-            <span className="text-sm tracking-wider">Nairobi, Kenya</span>
-            <span className="mx-2 text-accent">|</span>
-            <span className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-muted">
+            <div className="flex items-center gap-1.5">
+              <MapPin className="w-4 h-4" />
+              <span className="text-sm tracking-wider">Nairobi, Kenya</span>
+            </div>
+            <span className="text-accent hidden sm:inline">|</span>
+            <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse-subtle" />
               <span className="text-sm tracking-wider">Available for opportunities</span>
-            </span>
+            </div>
           </div>
         </motion.div>
 
@@ -141,9 +148,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.5 }}
           onClick={scrollToProjects}
-          className="mt-12 group flex flex-col items-center gap-2 text-muted hover:text-accent transition-colors cursor-pointer"
+          className="mt-12 group flex flex-col items-center justify-center gap-2 text-muted hover:text-accent transition-colors cursor-pointer w-full"
         >
-          <span className="text-sm tracking-widest uppercase">Explore the Craft</span>
+          <span className="text-sm tracking-widest uppercase text-center">Explore the Craft</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
