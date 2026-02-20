@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect, useCallback } from "react";
-import { Terminal as TerminalIcon, X, Minimize2, Maximize2 } from "lucide-react";
+import { Terminal as TerminalIcon, X, Minimize2 } from "lucide-react";
 
 interface TerminalLine {
   type: "input" | "output" | "error";
@@ -13,12 +13,12 @@ interface TerminalLine {
 const commands: Record<string, string[]> = {
   help: [
     "Available commands:",
-    "  whoami     - Learn about Dennis",
+    "  whoami     - About me",
     "  skills     - View technical expertise",
     "  projects   - Featured projects",
     "  contact    - Contact information",
-    "  coffee     - Something fun...",
-    "  secret     - ???",
+    "  cv         - Download CV",
+    "  funfact    - Random fun facts",
     "  clear      - Clear terminal",
     "  exit       - Close terminal",
   ],
@@ -26,7 +26,7 @@ const commands: Record<string, string[]> = {
     "┌─────────────────────────────────────┐",
     "│  Dennis Ooki Magolo                 │",
     "│  Software Development Lead          │",
-    "│  Accor International                │",
+    "│  Uniconnect Centre                  │",
     "│                                     │",
     "│  'I believe software should feel    │",
     "│   crafted, not manufactured.'       │",
@@ -47,10 +47,10 @@ const commands: Record<string, string[]> = {
     "┌────────── Featured Projects ────────┐",
     "│                                     │",
     "│  1. Personal Finance Tracker        │",
-    "│     → React + Django + MongoDB      │",
+    "│     -> React + Django + MongoDB     │",
     "│                                     │",
     "│  2. Kula Kount                      │",
-    "│     → Flutter + Supabase            │",
+    "│     -> Flutter + Supabase           │",
     "│                                     │",
     "│  Type 'open <number>' for details   │",
     "└─────────────────────────────────────┘",
@@ -59,37 +59,51 @@ const commands: Record<string, string[]> = {
     "┌────────── Contact Details ──────────┐",
     "│                                     │",
     "│  Email:   dennisooki@icloud.com     │",
-    "│  Phone:   +254 700 772 176          │",
     "│  GitHub:  github.com/dennisooki     │",
     "│                                     │",
     "└─────────────────────────────────────┘",
   ],
-  coffee: [
-    "   ( (",
-    "    ) )",
-    "  ........",
-    "  |      |]",
-    "  \\      /",
-    "   `----'",
-    "",
-    "  Fun fact: Dennis runs on approximately",
-    "  4 cups of coffee per debugging session.",
-  ],
-  secret: [
-    "",
-    "  ╔═══════════════════════════════════╗",
-    "  ║                                   ║",
-    "  ║   🎉 You found the secret! 🎉     ║",
-    "  ║                                   ║",
-    "  ║   Here's a virtual high-five:     ║",
-    "  ║          ✋                        ║",
-    "  ║                                   ║",
-    "  ║   Keep exploring, curious one!    ║",
-    "  ║                                   ║",
-    "  ╚═══════════════════════════════════╝",
-    "",
+  cv: [
+    "┌─────────── Download CV ─────────────┐",
+    "│                                     │",
+    "│  Opening CV for download...         │",
+    "│                                     │",
+    "│  Tip: Use 'Save as PDF' in print    │",
+    "│  dialog for best results.           │",
+    "│                                     │",
+    "└─────────────────────────────────────┘",
   ],
 };
+
+const funFacts: string[][] = [
+  [
+    "",
+    "  [ Fun Fact #1 ]",
+    "",
+    "  Arsenal is a small club with 0 major trophies",
+    "  ever since I was born. Coincidence? I think not.",
+    "",
+  ],
+  [
+    "",
+    "  [ Fun Fact #2 ]",
+    "",
+    "  The first time I 'coded' was theoretically as a",
+    "  6-year-old toddler - editing GTA San Andreas mod",
+    "  scripts on Windows XP with Notepad... on a dial-up",
+    "  modem.",
+    "",
+  ],
+  [
+    "",
+    "  [ Fun Fact #3 ]",
+    "",
+    "  I run on approximately 4 cups of coffee per",
+    "  debugging session. Sleep is just a dependency I",
+    "  haven't installed yet.",
+    "",
+  ],
+];
 
 export default function Terminal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -172,6 +186,30 @@ export default function Terminal() {
         { type: "output", content: "  • GDPR compliant" },
         { type: "output", content: "" },
       ]);
+      return;
+    }
+
+    if (trimmedCmd === "cv") {
+      setTimeout(() => {
+        addLines(commands.cv.map((line) => ({ type: "output" as const, content: line })));
+        addLines([{ type: "output", content: "" }]);
+        setTimeout(() => {
+          const cvWindow = window.open("/Dennis Ooki CV.html", "_blank");
+          if (cvWindow) {
+            setTimeout(() => {
+              cvWindow.print();
+            }, 500);
+          }
+        }, 500);
+      }, 100);
+      return;
+    }
+
+    if (trimmedCmd === "funfact") {
+      const randomFact = funFacts[Math.floor(Math.random() * funFacts.length)];
+      setTimeout(() => {
+        addLines(randomFact.map((line) => ({ type: "output" as const, content: line })));
+      }, 100);
       return;
     }
 
