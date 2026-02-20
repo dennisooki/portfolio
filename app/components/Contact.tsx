@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Mail, Phone, Send, Github, Linkedin, CheckCircle } from "lucide-react";
+import { Mail, Send, Github, Linkedin, CheckCircle } from "lucide-react";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -63,33 +63,18 @@ export default function Contact() {
                 </p>
               </div>
 
-              <div className="space-y-4">
-                <a
-                  href="mailto:dennisooki@icloud.com"
-                  className="flex items-center gap-4 p-4 bg-surface border border-border rounded-lg hover:border-accent transition-colors group"
-                >
-                  <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
-                    <Mail className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted uppercase tracking-wider">Email</p>
-                    <p className="text-foreground">dennisooki@icloud.com</p>
-                  </div>
-                </a>
-
-                <a
-                  href="tel:+254700772176"
-                  className="flex items-center gap-4 p-4 bg-surface border border-border rounded-lg hover:border-accent transition-colors group"
-                >
-                  <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
-                    <Phone className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted uppercase tracking-wider">Phone</p>
-                    <p className="text-foreground">+254 700 772 176</p>
-                  </div>
-                </a>
-              </div>
+              <a
+                href="mailto:dennisooki@icloud.com"
+                className="flex items-center gap-4 p-4 bg-surface border border-border rounded-lg hover:border-accent transition-colors group"
+              >
+                <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
+                  <Mail className="w-5 h-5 text-accent" />
+                </div>
+                <div>
+                  <p className="text-xs text-muted uppercase tracking-wider">Email</p>
+                  <p className="text-foreground">dennisooki@icloud.com</p>
+                </div>
+              </a>
 
               <div className="flex gap-4 pt-4">
                 <a
