@@ -14,7 +14,7 @@ interface ExperienceItem {
 const experiences: ExperienceItem[] = [
   {
     title: "Software Development Lead",
-    company: "Uniconnect Centre (Accor International)",
+    company: "Uniconnect Centre",
     period: "May 2025 – Present",
     description: "Leading the development of internal tools ecosystem and AI-powered solutions.",
     achievements: [

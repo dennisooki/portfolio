@@ -26,7 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Dennis Ooki Magolo | Software Development Lead",
-  description: "Portfolio of Dennis Ooki Magolo - Software Development Lead at Accor International. Full-stack developer specializing in Python, Django, Flutter, and React.",
+  description: "Portfolio of Dennis Ooki Magolo - Software Development Lead at Uniconnect Centre. Full-stack developer specializing in Python, Django, Flutter, and React.",
   keywords: ["Dennis Ooki Magolo", "Software Developer", "Full-stack Developer", "Django", "Flutter", "React", "Python"],
   authors: [{ name: "Dennis Ooki Magolo" }],
   creator: "Dennis Ooki Magolo",
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     title: "Dennis Ooki Magolo | Software Development Lead",
-    description: "Portfolio of Dennis Ooki Magolo - Software Development Lead at Accor International.",
+    description: "Portfolio of Dennis Ooki Magolo - Software Development Lead at Uniconnect Centre.",
     siteName: "Dennis Ooki Magolo Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Dennis Ooki Magolo | Software Development Lead",
-    description: "Portfolio of Dennis Ooki Magolo - Software Development Lead at Accor International.",
+    description: "Portfolio of Dennis Ooki Magolo - Software Development Lead at Uniconnect Centre.",
   },
 };
 
