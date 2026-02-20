@@ -1,7 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, FileText } from "lucide-react";
+
+const handleDownloadCV = () => {
+  const cvWindow = window.open("/Dennis Ooki CV.html", "_blank");
+  if (cvWindow) {
+    setTimeout(() => {
+      cvWindow.print();
+    }, 500);
+  }
+};
 
 export default function About() {
   return (
@@ -34,20 +43,29 @@ export default function About() {
             </blockquote>
 
             <p className="text-muted leading-relaxed mb-6">
-              Dennis is a <span className="text-foreground font-medium">Software Development Lead</span> at{" "}
-              <span className="text-accent font-medium">Accor International</span>, crafting digital 
+              I am a <span className="text-foreground font-medium">Software Development Lead</span> at{" "}
+              <span className="text-accent font-medium">Uniconnect Centre</span>, crafting digital 
               experiences that merge technical precision with creative vision. With a foundation in 
-              full-stack development and a passion for elegant architecture, he transforms complex 
+              full-stack development and a passion for elegant architecture, I transform complex 
               problems into intuitive solutions.
             </p>
 
             <p className="text-muted leading-relaxed mb-8">
-              Currently leading the internal tools ecosystem at Uniconnect Centre, Dennis specializes 
+              Currently leading the internal tools ecosystem at Uniconnect Centre, I specialize 
               in building scalable applications, integrating AI-powered solutions, and establishing 
               development workflows that empower teams to deliver exceptional results.
             </p>
 
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4">
+              <motion.button
+                onClick={handleDownloadCV}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="flex items-center gap-2 px-5 py-3 bg-accent text-background rounded-lg font-medium text-sm hover:bg-accent-light transition-colors"
+              >
+                <FileText className="w-4 h-4" />
+                Download CV
+              </motion.button>
               <a
                 href="https://github.com/dennisooki"
                 target="_blank"
