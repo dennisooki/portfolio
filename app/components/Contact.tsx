@@ -16,14 +16,26 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormState({ name: "", email: "", message: "" });
-    
-    setTimeout(() => setIsSubmitted(false), 3000);
+    try {
+      const res = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formState),
+      })
+      const j = await res.json()
+      if (j.success) {
+        setIsSubmitted(true)
+        setFormState({ name: '', email: '', message: '' })
+        setTimeout(() => setIsSubmitted(false), 3000)
+      } else {
+        alert(j.error === 'rate' ? 'Too many messages. Try later.' : 'Failed to send')
+      }
+    } catch (e) {
+      console.error(e)
+      alert('Failed to send')
+    } finally {
+      setIsSubmitting(false)
+    }
   };
 
   return (
